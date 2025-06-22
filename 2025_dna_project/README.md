@@ -70,10 +70,14 @@ src/
    - 도서 데이터 확장 (20권)
    - 자동 연체 확인 시스템 추가
 
-## 프로젝트 실행 방법
-1. 저장소 클론
+## 프로젝트 설치 및 실행 방법
+
+## 설치 방법
+
+1. GitHub 저장소 클론
 ```bash
-git clone [저장소 URL]
+git clone https://github.com/ADMB-XoX/2025_sunrinDNA.git
+cd 2025_sunrinDNA
 ```
 
 2. 의존성 설치
@@ -85,6 +89,11 @@ yarn install
 ```bash
 yarn start
 ```
+
+## 요구사항
+- Node.js
+- Yarn 패키지 매니저
+- Git
 
 ## 향후 개선 계획
 1. 백엔드 서버 구축
