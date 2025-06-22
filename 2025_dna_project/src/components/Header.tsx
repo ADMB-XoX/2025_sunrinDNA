@@ -1,16 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
-interface HeaderProps {}
+const Header: React.FC = () => {
+  const navigate = useNavigate();
 
-const Header: React.FC<HeaderProps> = () => {
   return (
     <header className="header">
-      <nav className="nav-container">
-        <div className="logo">
-          <h1>ILE</h1>
-        </div>
-      </nav>
+      <div className="header-content">
+        <h1 className="logo" onClick={() => navigate('/')}>ILE</h1>
+      </div>
     </header>
   );
 };
