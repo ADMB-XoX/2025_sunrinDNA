@@ -70,24 +70,23 @@ const calculatePopularityScore = (rating: number, loanCount: number): number => 
   const normalizedRating = (rating / 5) * 100;
   // 대출 횟수는 로그 스케일로 변환하여 극단적인 차이를 완화
   const normalizedLoanCount = Math.min(Math.log10(loanCount + 1) * 25, 100);
-  
-  // 평점 70%, 대출 횟수 30% 비중으로 계산
-  return (normalizedRating * 0.7 + normalizedLoanCount * 0.3);
+  // 평점 60%, 대출 횟수 40% 비중으로 계산
+  return (normalizedRating * 0.6 + normalizedLoanCount * 0.4);
 };
 
 // 인기도 점수에 따른 대출 기간 계산 함수
 const calculateLoanPeriod = (popularityScore: number): number => {
-  if (popularityScore >= 95) return 4;   // S등급: 4일
-  if (popularityScore >= 85) return 7;   // A등급: 7일
-  if (popularityScore >= 75) return 10;  // B등급: 10일
-  return 14;                             // C등급: 14일
+  if (popularityScore >= 90) return 3;    // S등급: 3일
+  if (popularityScore >= 80) return 7;    // A등급: 7일
+  if (popularityScore >= 70) return 10;   // B등급: 10일
+  return 14;                              // C등급: 14일
 };
 
-// 인기도 등급 계산 함수
+// 인기도 등급 표시 함수
 const getPopularityGrade = (popularityScore: number): string => {
-  if (popularityScore >= 95) return 'S';
-  if (popularityScore >= 85) return 'A';
-  if (popularityScore >= 75) return 'B';
+  if (popularityScore >= 90) return 'S';
+  if (popularityScore >= 80) return 'A';
+  if (popularityScore >= 70) return 'B';
   return 'C';
 };
 

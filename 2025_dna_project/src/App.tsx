@@ -12,8 +12,8 @@ const App: React.FC = () => {
         <Header />
         <Routes>
           <Route path="/" element={<PopularBooks />} />
+          <Route path="/my-loans" element={<MyLoans />} />
         </Routes>
-        <MyLoans />
       </div>
     </LoanProvider>
   );
