@@ -13,9 +13,8 @@
 
 /* 상태 요약 카드 스타일 */
 .loan-status-summary {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  display: flex;
+  justify-content: center;
   margin-bottom: 3rem;
 }
 
@@ -25,6 +24,7 @@
   padding: 1.5rem;
   text-align: center;
   transition: transform 0.2s;
+  min-width: 200px;
 }
 
 .status-card:hover {
@@ -58,6 +58,21 @@
 
 .status-card.reserved {
   background-color: rgba(255, 193, 7, 0.1);
+}
+
+/* 예약 없음 메시지 */
+.no-reservations {
+  text-align: center;
+  padding: 3rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.no-reservations p {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
 }
 
 /* 대출 기록 카드 스타일 */
@@ -136,10 +151,8 @@
 
 .loan-actions {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-top: auto;
 }
 
 .status-badge {

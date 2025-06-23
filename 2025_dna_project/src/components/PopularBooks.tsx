@@ -335,12 +335,12 @@ const PopularBooks: React.FC = () => {
         cover: selectedBook.cover,
         startDate: startDate,
         endDate: endDate,
-        status: startDate.getTime() === new Date().getTime() ? 'active' : 'reserved'
+        status: 'reserved'
       });
 
       alert(
-        `"${selectedBook.title}" 대출이 완료되었습니다.\n` +
-        `대출 시작일: ${startDate.toLocaleDateString()}\n` +
+        `"${selectedBook.title}" 대출이 예약되었습니다.\n` +
+        `대출 예정일: ${startDate.toLocaleDateString()}\n` +
         `반납 예정일: ${endDate.toLocaleDateString()}`
       );
       setSelectedBook(null);
@@ -396,7 +396,7 @@ const PopularBooks: React.FC = () => {
                 onClick={() => !book.isLoaned && handleLoanRequest(book)}
                 disabled={book.isLoaned}
               >
-                {book.isLoaned ? '대출 중' : '대출하기'}
+                {book.isLoaned ? '대출 중' : '예약하기'}
               </button>
             </div>
           </div>
